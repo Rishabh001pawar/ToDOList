@@ -80,7 +80,7 @@ If you are interested to contribute in this project how to start contribute
 
 ## 📬 Contact
 Questions or feedback? Reach out via:
-- Email: your-email@example.com
+- Email: your-rishabhpawar059@gmail.com
 - GitHub Issues: Create an issue
 ⭐ Star this repo if you find it useful! Happy task managing! 🚀
 
