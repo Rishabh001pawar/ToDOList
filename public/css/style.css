@@ -1,0 +1,201 @@
+/* General Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #0a0a23 0%, #1e1e5f 30%, #7b2cbf 60%, #00ddeb 100%);
+  color: #f0f0f5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Subtle Background Glow Effect */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 20%, rgba(0, 221, 235, 0.2) 0%, transparent 70%);
+  z-index: -1;
+}
+
+/* Heading Container */
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 30px 0;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(0, 221, 235, 0.7), 0 0 25px rgba(123, 44, 191, 0.5);
+  letter-spacing: 2px;
+  text-align: center;
+  background: linear-gradient(45deg, #00ddeb, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Task Container */
+.task-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 25px;
+  width: 100%;
+  max-width: 550px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Task Items */
+.item {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 15px rgba(0, 221, 235, 0.3);
+}
+
+.item::before {
+  content: '●';
+  color: #00ddeb;
+  font-size: 1rem;
+  margin-right: 15px;
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border: 2px solid #ffffff;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  margin-right: 12px;
+  transition: background 0.2s ease;
+}
+
+input[type="checkbox"]:checked {
+  background: #00ddeb;
+  border-color: #00ddeb;
+  position: relative;
+}
+
+input[type="checkbox"]:checked::after {
+  content: '✔';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #0a0a23;
+  font-size: 14px;
+}
+
+p {
+  font-size: 1.15rem;
+  color: #f0f0f5;
+  flex: 1;
+  transition: color 0.3s ease;
+}
+
+input[type="checkbox"]:checked + p {
+  color: #a0a0c0;
+  text-decoration: line-through;
+}
+
+/* Add Form */
+.add-form {
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  font-size: 1rem;
+  outline: none;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]::placeholder {
+  color: #b0b0d0;
+}
+
+input[type="text"]:focus {
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 12px rgba(0, 221, 235, 0.4);
+}
+
+button {
+  padding: 14px 24px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #00ddeb, #ff2e63);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 221, 235, 0.5);
+  background: linear-gradient(45deg, #00ddeb, #ff6b6b);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .task-container {
+    padding: 20px;
+  }
+
+  .add-form {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .item {
+    padding: 10px;
+  }
+}
