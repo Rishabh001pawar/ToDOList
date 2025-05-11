@@ -82,6 +82,7 @@ If you are interested to contribute in this project how to start contribute
 Questions or feedback? Reach out via:
 - Email: your-rishabhpawar059@gmail.com
 - GitHub Issues: Create an issue
+ <br>
 ⭐ Star this repo if you find it useful! Happy task managing! 🚀
 
 
